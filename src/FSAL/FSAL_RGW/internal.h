@@ -150,4 +150,20 @@ void handle_ops_init(struct fsal_obj_ops *ops);
 struct state_t *alloc_state(struct fsal_export *exp_hdl,
 			enum state_type state_type,
 			struct state_t *related_state);
+/* xattr operations */
+fsal_status_t rgw_fsal_getxattrs(struct fsal_obj_handle *obj_hdl,
+					xattrname4 *xa_name,
+					xattrvalue4 *xa_value);
+fsal_status_t rgw_fsal_setxattrs(struct fsal_obj_handle *obj_hdl,
+					setxattr_type4 sa_type,
+					xattrname4 *xa_name,
+					xattrvalue4 *xa_value);
+fsal_status_t rgw_fsal_removexattrs(struct fsal_obj_handle *obj_hdl,
+					xattrname4 *xa_name);
+fsal_status_t rgw_fsal_listxattrs(struct fsal_obj_handle *obj_hdl,
+					count4 la_maxcount,
+					nfs_cookie4 *la_cookie,
+					verifier4 *la_cookieverf,
+					bool_t *lr_eof,
+					xattrlist4 *lr_names);
 #endif				/* !FSAL_RGW_INTERNAL_INTERNAL */

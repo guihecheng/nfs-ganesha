@@ -6,6 +6,7 @@ SET(fsalrgw_LIB_SRCS
    main.c
    export.c
    handle.c
+   xattr.c
    internal.c
    internal.h
 )

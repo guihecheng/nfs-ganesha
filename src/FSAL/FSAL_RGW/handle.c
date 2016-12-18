@@ -1575,4 +1575,8 @@ void handle_ops_init(struct fsal_obj_ops *ops)
 	ops->commit2 = rgw_fsal_commit2;
 	ops->setattr2 = rgw_fsal_setattr2;
 	ops->close2 = rgw_fsal_close2;
+	ops->getxattrs = rgw_fsal_getxattrs;
+	ops->setxattrs = rgw_fsal_setxattrs;
+	ops->removexattrs = rgw_fsal_removexattrs;
+	ops->listxattrs = rgw_fsal_listxattrs;
 }
